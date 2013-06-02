@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+		<meta name="description" content="Tutorial made with Tutorializr">
+		<meta name="author" content="Tutorializr (Maria Grazia Alastra)">
+		<!-- Bootstrap -->
+		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+		<link rel="shortcut icon" href="img/favicon.ico" />
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<style>
+			#terminal {
+				position:relative;
+				margin:0 10px 5px;
+				height:500px;
+				padding:5px 19px 14px;
+				background-color:#E6E6E6;
+				*padding-top:19px;
+				-webkit-border-radius:5px;
+				-moz-border-radius:5px;
+				border-radius:5px;
+			}
+			.span4 {
+				position:relative;
+				margin-top:7px;
+				height:543px;
+				padding:9px 19px 14px;
+				background-color:#fff;
+				border:2px solid #0088CC;
+				-webkit-border-radius:5px;
+				-moz-border-radius:5px;
+				border-radius:5px;
+			}
+			#console {
+				margin:10px 0;
+				padding:12px;
+				width:838px;
+				background-color:#3C3B3B;
+				color:#fff;
+				text-shadow:0 -1px 0 black;
+				box-shadow:1px 2px 0 #fff;
+				color:#fff;
+				-webkit-border-radius:5px;
+				-moz-border-radius:5px;
+				border-radius:5px;
+			}
+			textarea {
+				width:820px;
+				height:375px;
+				border:2px solid #F89406;
+				-webkit-border-radius:5px;
+				-moz-border-radius:5px;
+				border-radius:5px;
+			}
+			iframe {
+				display:none;
+				width:832px;
+				height:383px;
+				margin-bottom:5px;
+				background-color:#fff;
+				border:2px solid #F89406;
+				-webkit-border-radius:5px;
+				-moz-border-radius:5px;
+				border-radius:5px;
+			}
+			.row-fluid {
+				margin-left:20px;
+				background-color:#E6E6E6;
+			}
+			body {
+				background-color:#E6E6E6;
+			}
+			#good, #bad, #goodlast {
+				display:none;
+				margin:0;
+			}
+			.nav-pills {
+				margin-bottom:20px;
+				font-size:16px;
+			}
+			h1 {
+				color:#3C3B3B;
+				text-shadow:1px 2px 0 #fff;
+			}
+			pre {
+				border-color:#F89406;
+				background-color:#FCF1E4;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="text-center"></h1>
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<div class="span4">
+					<!--Sidebar content-->
+					<p class="text-center">
+						<strong>35% Completed</strong>
+					</p>
+
+					<div class="progress progress-striped">
+						<div class="bar" style="width: 0%;"></div>
+					</div>
+					<div class="pagination pagination-centered">
+						<div class="btn-toolbar">
+							<div class="btn-group">
+								<button id="prev" class="btn btn-warning disabled">
+									<i class="icon-arrow-left icon-white icon-align-center"> </i>
+								</button>
+								<button id="next" class="btn btn-primary disabled">
+									<i class="icon-arrow-right icon-white icon-align-center"> </i>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="span8" id="terminal">
+					<!--Body content-->
+					<ul class="nav nav-pills">
+						<li id="html" class="active">
+							<a href="#"><strong>HTML</strong></a>
+						</li>
+						<li id="css">
+							<a href="#"><strong>CSS</strong></a>
+						</li>
+						<li id="preview">
+							<a href="#"><strong>Preview</strong></a>
+						</li>
+					</ul>
+					<textarea name="code"></textarea>
+					<iframe></iframe>
+					<div>
+						<button id="submit" class="btn btn-primary">
+							Submit
+						</button>
+						<button id="reset" class="btn btn-warning">
+							Reset
+						</button>
+
+					</div>
+					<div id="console" class="span12">
+						<!--Body content-->
+						<p>
+							Press "Submit" when you're ready.
+						</p>
+						<div id="good" class="alert alert-success">
+							<strong>Well done! You can now proceed <a id="nextlink" href="#">to the next lesson!</a></strong>
+						</div>
+						<div id="goodlast" class="alert alert-success">
+							<strong>Well done! You have finished this tutorial!</strong>
+						</div>
+						<div id="bad" class="alert alert-error">
+							<strong>Uhm, there is something wrong here... Try again!</strong>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div id="complete" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+						×
+					</button>
+					<h3 id="myModalLabel" class="text-center">Congratulations!</h3>
+				</div>
+				<div class="modal-body">
+					<p class="text-center">
+						You have finished this tutorial. Hooray!
+					</p>
+					<p class="text-center">
+						Do you wish to make a tutorial just like this one? If yes, check Tutorializr,
+						the tutorial editor you always wished to have!
+					</p>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-primary">
+						Let's see this Tutorializr!
+					</button>
+					<button class="btn" data-dismiss="modal" aria-hidden="true">
+						Close
+					</button>
+				</div>
+			</div>
+		</div>
+		<script src="js/tutorial.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>

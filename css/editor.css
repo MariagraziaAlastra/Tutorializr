@@ -1,0 +1,99 @@
+#terminal {
+	position:relative;
+	margin:0 10px 5px;
+	height:500px;
+	padding:5px 19px 14px;
+	background-color:#fff;
+	*padding-top:19px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+}
+.span4 {
+	position:relative;
+	margin-top:7px;
+	height:543px;
+	padding:9px 19px 14px;
+	background-color:#fff;
+	border:2px solid #0088CC;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+}
+#console {
+	margin:10px 0;
+	padding:12px;
+	width:838px;
+	background-color:#3C3B3B;
+	color:#fff;
+	text-shadow:0 -1px 0 black;
+	box-shadow:1px 2px 0 #fff;
+	color:#fff;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+}
+#code {
+	width:820px;
+	height:375px;
+	border:2px solid #F89406;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+}
+iframe {
+	display:none;
+	width:832px;
+	height:383px;
+	margin-bottom:5px;
+	background-color:#fff;
+	border:2px solid #F89406;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+}
+.row-fluid {
+	margin-left:20px;
+	background-color:#fff;
+}
+body {
+	background-color:#fff;
+}
+#done1, #bad, #done2, #finish {
+	display:none;
+	margin:0;
+}
+.nav-pills {
+	margin-bottom:20px;
+	font-size:16px;
+}
+h1 {
+	color:#3C3B3B;
+	text-shadow:1px 2px 0 #fff;
+}
+pre {
+	border-color:#F89406;
+	background-color:#FCF1E4;
+}
+#choosetitle> p, #choosenumber> p {
+	display:inline;
+}
+#title, #number {
+	display:inline;
+	height:30px;
+}
+.modal-footer button {
+	margin-right:230px;
+}
+#notitle, #nonumber, #submit2, #required, #doneall, #donetext {
+	display:none;
+}
+#lessontext, #assigntext {
+	width:350px;
+}
+#lessontext {
+	height:190px;
+}
+#required {
+	color:red;
+}

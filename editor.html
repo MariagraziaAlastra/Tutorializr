@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Tutorializr &middot; Editor</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+		<meta name="description" content="Make your own HTML+CSS tutorial!">
+		<meta name="author" content="Maria Grazia Alastra">
+		<!-- Bootstrap -->
+		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+		<link href="css/editor.css" rel="stylesheet" media="screen">
+		<link rel="shortcut icon" href="img/favicon.ico" />
+	</head>
+	<body>
+		<h1 class="text-center">Title</h1>
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<div class="span4">
+					<!--Sidebar content-->
+					<p class="text-center">
+						<strong>0% Complete</strong>
+					</p>
+
+					<div class="progress progress-striped">
+						<div class="bar" style="width: 0%;"></div>
+					</div>
+					<div class="pagination pagination-centered">
+						<div class="btn-toolbar">
+							<div class="btn-group">
+								<button id="prev" class="btn btn-warning disabled">
+									<i class="icon-arrow-left icon-white icon-align-center"> </i>
+								</button>
+								<button id="next" class="btn btn-primary disabled">
+									<i class="icon-arrow-right icon-white"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+					<p id="required">
+						Both fields are required.
+					</p>
+					<div id="donetext" class="alert alert-success">
+						<strong>Well done! Now insert the remaining code for this lesson.</strong>
+					</div>
+					<div id="doneall" class="alert alert-success">
+						<strong>Well done! Now you can move on <a href="#" class="next">to the next lesson!</a></strong>
+					</div>
+					<p>
+						<strong>Insert the text for this lesson below:</strong>
+					</p>
+					<textarea id="lessontext"></textarea>
+					<p>
+						<strong>Insert instructions about the assignment below:</strong>
+					</p>
+					<textarea id="assigntext"></textarea>																				
+					
+
+
+
+
+					<div class="pagination pagination-centered">
+						<button id="savelesson" class="btn btn-primary">
+							Save lesson
+						</button>
+					</div>
+				</div>
+
+				<div class="span8" id="terminal">
+					<!--Body content-->
+					<ul class="nav nav-pills">
+						<li id="html" class="active">
+							<a href="#"><strong>HTML</strong></a>
+						</li>
+						<li id="css">
+							<a href="#"><strong>CSS</strong></a>
+						</li>
+						<li id="preview">
+							<a href="#"><strong>Preview</strong></a>
+						</li>
+					</ul>
+					<textarea id="code"></textarea>
+					<iframe></iframe>
+					<div>
+						<button id="submit" class="btn btn-primary">
+							Save the solution
+						</button>
+						<button id="submit2" class="btn btn-primary">
+							Save the exercise
+						</button>
+						<button id="reset" class="btn btn-warning">
+							Reset
+						</button>
+
+					</div>
+					<div id="console" class="span12">
+						<p>
+							Insert the solution of this lesson, first, and then save.
+							You can preview the result by switching to the "Preview" tab!
+						</p>
+						<div id="done1" class="alert alert-success">
+							<strong>Well done! Now remove the code parts that students are supposed to add, and save again.</strong>
+						</div>
+						<div id="done2" class="alert alert-success">
+							<strong>Well done! All the code part is complete for this lesson!</strong>
+						</div>
+						<div id="finish" class="alert alert-success">
+							<strong>Well done! Now you can move on <a href="#" class="next">to the next lesson!</a></strong>
+						</div>
+						<div id="bad" class="alert alert-error">
+							<strong>Please insert some code</strong>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!------------------------- Welcome Dialog --------------------------->
+
+		<div id="welcome" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-header">
+				<h2 id="myModalLabel" class="text-center">Welcome!</h2>
+			</div>
+			<div class="modal-body">
+				<p class="lead">
+					Are you ready to make your own HTML+CSS tutorial?
+					First, choose a cool title and the number of lessons:
+				</p>
+				<div id="notitle" class="alert alert-error">
+					<strong>Please insert a valid title</strong>
+				</div>
+				<div id="nonumber" class="alert alert-error">
+					<strong>Please insert a valid number of lessons</strong>
+				</div>
+				<div id="choosetitle">
+					<p class="lead">
+						Title:
+					</p>
+					<textarea id="title" class="lead"></textarea>
+				</div>
+				<div id="choosenumber">
+					<p class="lead">
+						Number of lessons:
+					</p>
+					<textarea id="number" class="lead"></textarea>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-large btn-success" id="titleset">
+					Done
+				</button>
+			</div>
+		</div>
+
+		<!------------------------- Completion Dialog -------------------------------->
+
+		<div id="finaldialog" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-header">
+				<h2 id="hooray" class="text-center">Hooray!</h2>
+			</div>
+			<div class="modal-body">
+				<p class="lead">
+					The source code of your tutorial is ready to be downloaded!
+				</p>
+				<p class="lead">
+					To test it, include the files in your website and access the tutorial page via http://your_website_url/template.html
+				</p>
+				<div class="modal-footer">
+					<a href="#" id="blob">
+					<button class="btn btn-large btn-success" id="download" href="#">
+						Download
+					</button> </a>
+				</div>
+			</div>
+		</div>
+
+		<!-------------------------------- Explanation Dialog ----------------------------->
+
+		<div id="seconddialog" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-header">
+				<h2 id="welldone" class="text-center">Well done!</h2>
+			</div>
+			<div class="modal-body">
+				<p class="lead">
+					Now follow these steps for each lesson:
+				</p>
+				<ul>
+					<li>
+						<h5>Insert the complete code (the solution) and click on "Save the solution"</h5>
+					</li>
+					<li>
+						<h5>Remove the code that students are supposed to add and click on "Save the exercise"</h5>
+					</li>
+					<li>
+						<h5>Insert the explanation and the instructions for the assignment, then click on "Save"</h5>
+					</li>
+					<li>
+						<h5>Click on the "next" button (or on the links) to set up the next lesson</h5>
+					</li>
+					<li>
+						<h5>Repeat until the tutorial is complete!</h5>
+					</li>
+				</ul>
+				<p class="lead">
+					Finally you will be able to download the source code. Have fun!
+				</p>
+				<div class="modal-footer">
+					<button class="btn btn-large btn-success" data-dismiss="modal" id="ok" href="#">
+						Ok
+					</button>
+				</div>
+			</div>
+		</div>
+		<script src="js/jszip.js"></script>
+		<script src="js/jszip-deflate.js"></script>
+		<script src="js/jszip-inflate.js"></script>
+		<script src="js/jszip-load.js"></script>
+		<script src="js/jquery.1.9.1.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/editor.js"></script>
+	</body>
+</html>

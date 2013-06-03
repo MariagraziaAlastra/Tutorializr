@@ -40,6 +40,6 @@ See also [LICENSE.md](https://github.com/MariagraziaAlastra/Tutorializr/blob/gh-
 Contribute
 ----------
 
-You can help by testing! If you find bugs or have any feature request, please [file a bug here](https://github.com/MariagraziaAlastra/Tutorializr/issues).
+You can help by testing! If you find bugs or have any feature requests, please [file a bug here](https://github.com/MariagraziaAlastra/Tutorializr/issues).
 
 Thank you!

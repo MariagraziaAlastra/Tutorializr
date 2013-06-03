@@ -37,6 +37,13 @@ Tutorializr Copyright (C) 2013  Maria Grazia Alastra
     
 See also [LICENSE.md](https://github.com/MariagraziaAlastra/Tutorializr/blob/gh-pages/LICENSE.md).
 
+External frameworks and libraries used in this project
+------------------------------------------------------
+
+* [Twitter Bootstrap](http://twitter.github.io/bootstrap/)
+* [JQuery](http://jquery.com/)
+* [JSZip](http://stuk.github.io/jszip/)
+
 Contribute
 ----------
 

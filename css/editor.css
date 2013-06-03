@@ -82,8 +82,11 @@ pre {
 	display:inline;
 	height:30px;
 }
-.modal-footer button {
+#titleset, #ok {
 	margin-right:230px;
+}
+#download{
+	margin-right:190px;
 }
 #notitle, #nonumber, #submit2, #required, #doneall, #donetext {
 	display:none;

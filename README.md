@@ -1,7 +1,7 @@
 Tutorializr
 ===========
 
-Tutorializr is an editor for tutorials (right now it's possible to create only HTML + CSS tutorials). It's still in alpha, many more features to come!
+Tutorializr is a tutorial maker (only HTML + CSS tutorials can be created, right now). It's still in alpha, many more features to come!
 
 TODO list (remainder for myself) :
 ----------------------------------
@@ -17,8 +17,8 @@ in the textareas dedicated to the lesson explanation;
 * Create more templates;
 * Add more content to the home page.
 
-License - GNU GENERAL PUBLIC LICENSE
-------------------------------------
+License - GNU GPLv3
+-------------------
 
 Tutorializr Copyright (C) 2013  Maria Grazia Alastra
 
@@ -34,3 +34,12 @@ Tutorializr Copyright (C) 2013  Maria Grazia Alastra
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+    
+See also [LICENSE.md](https://github.com/MariagraziaAlastra/Tutorializr/blob/gh-pages/LICENSE.md).
+
+Contribute
+----------
+
+You can help by testing! If you find bugs or have any feature request, please [file a bug here](https://github.com/MariagraziaAlastra/Tutorializr/issues).
+
+Thank you!

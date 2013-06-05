@@ -3,7 +3,7 @@ Tutorializr
 
 Tutorializr is a tutorial maker (only HTML + CSS tutorials can be created, right now). It's still in alpha, many more features to come!
 
-TODO list (remainder for myself) :
+TODO list (reminder for myself) :
 ----------------------------------
 
 * Add Media Queries;

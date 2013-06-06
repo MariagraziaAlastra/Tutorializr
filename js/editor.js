@@ -76,6 +76,12 @@ $(document).ready(function() {
 
 });
 
+$('#welcome').on('hidden', function () {
+    if (title == "" || !chapters) {
+    	$(this).modal("show");
+    }
+})
+
 $("li").bind("click", function() {
 	var active = $(".active");
 	var textarea = $("#code");

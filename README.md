@@ -8,7 +8,7 @@ TODO list (reminder for myself) :
 
 * Add Media Queries;
 * Create a better favicon;
-* Implement code highliter;
+* Implement code highlighter;
 * Integrate some WYSIWYG editor (or just some basic functionalities) 
 in the textareas dedicated to the lesson explanation;
 * Save changes to the code when going back to previous lessons;

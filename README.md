@@ -7,7 +7,6 @@ TODO list (reminder for myself) :
 ----------------------------------
 
 * Add Media Queries;
-* Make the welcoming modal dialog unskippable;
 * Create a better favicon;
 * Implement code highliter;
 * Integrate some WYSIWYG editor (or just some basic functionalities) 

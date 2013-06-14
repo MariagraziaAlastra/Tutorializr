@@ -76,10 +76,10 @@ $(document).ready(function() {
 
 });
 
-$('#welcome').on('hidden', function () {
-    if (title == "" || !chapters) {
-    	$(this).modal("show");
-    }
+$('#welcome').on('hidden', function() {
+	if (title == "" || !chapters) {
+		$(this).modal("show");
+	}
 })
 
 $("li").bind("click", function() {
@@ -222,21 +222,25 @@ $("#reset").bind("click", function() {
 });
 
 $("#next, .next").bind("click", function() {
-	cur += 1;
-	if (cur == done) {
-		$("#next").addClass("disabled");
+	if (!$("#next").hasClass("disabled")) {
+		cur += 1;
+		if (cur == done) {
+			$("#next").addClass("disabled");
+		}
+		$("#prev").removeClass("disabled");
+		setCurrentLesson();
 	}
-	$("#prev").removeClass("disabled");
-	setCurrentLesson();
 });
 
 $("#prev").bind("click", function() {
-	cur -= 1;
-	if (cur == 0) {
-		$(this).addClass("disabled");
+	if (!$("#prev").hasClass("disabled")) {
+		cur -= 1;
+		if (cur == 0) {
+			$(this).addClass("disabled");
+		}
+		$("#next").removeClass("disabled");
+		setCurrentLesson();
 	}
-	$("#next").removeClass("disabled");
-	setCurrentLesson();
 });
 
 $("#code").bind("blur", function() {

@@ -201,6 +201,7 @@ $("li").bind("click", function() {
 					if (!htmldrop) {
 						$code.hide();
 						$("#start, #drop").show();
+						$drop.text("Drag your HTML file from desktop and drop it here, or click inside this box to write code from scratch!");
 					} else {
 						$code.val(htmlcon);
 						$code.show()
@@ -212,6 +213,7 @@ $("li").bind("click", function() {
 					if (!cssdrop) {
 						$code.hide();
 						$("#start, #drop").show();
+						$drop.text("Drag your CSS file from desktop and drop it here, or click inside this box to write code from scratch!");
 					} else {
 						$code.val(csscon);
 						$code.show();
@@ -327,7 +329,7 @@ $("#reset").bind("click", function() {
 	csscon = "";
 	cssdrop = false;
 	htmldrop = false;
-
+	$drop.text("Drag your HTML file from desktop and drop it here, or click inside this box to write code from scratch!");
 	switch ($(".active").find("a").text()) {
 		case "HTML":
 			$code.val(base);
@@ -438,6 +440,7 @@ function setCurrentLesson() {
 		cssdrop = false;
 		$lessontext.val("");
 		$assigntext.val("");
+		$drop.text("Drag your HTML file from desktop and drop it here, or click inside this box to write code from scratch!");
 		$("#start, #drop").show();
 		$code.hide();
 	}
@@ -474,7 +477,7 @@ function stringifyAndDownload() {
 	});
 	var blobLink = document.getElementById('blob');
 	try {
-		blobLink.download = "hello.zip";
+		blobLink.download = "Tutorializr." + title + ".zip";
 		blobLink.href = window.URL.createObjectURL(zip.generate({
 			type : "blob"
 		}));

@@ -34,6 +34,7 @@ var $lessontext;
 var $assigntext;
 var $donetext;
 var $doneall;
+var $drop;
 
 $(document).ready(function() {
 	//caching
@@ -49,10 +50,9 @@ $(document).ready(function() {
 	$assigntext = $("#assigntext");
 	$donetext = $("#donetext");
 	$doneall = $("#doneall");
+	$drop = $("#drop");
 
-	$code.val(base);
 	$("#welcome").modal("show");
-	htmlcon = base;
 
 	$.ajax({
 		url : "./template/template.html",
@@ -106,7 +106,70 @@ $('#welcome').on('hidden', function() {
 	if (title == "" || !chapters) {
 		$(this).modal("show");
 	}
-})
+});
+
+$("#drop").bind("click", function() {
+	$("#drop, #start").hide();
+	$code.val(base);
+	$code.show();
+	htmlcon = base;
+});
+
+var dropbox = document.getElementById("drop");
+
+dropbox.addEventListener("dragenter", dragEnter, false);
+dropbox.addEventListener("dragexit", dragExit, false);
+dropbox.addEventListener("dragover", dragOver, false);
+dropbox.addEventListener("drop", drop, false);
+
+function dragEnter(evt) {
+	evt.stopPropagation();
+	evt.preventDefault();
+}
+
+function dragExit(evt) {
+	evt.stopPropagation();
+	evt.preventDefault();
+}
+
+function dragOver(evt) {
+	evt.stopPropagation();
+	evt.preventDefault();
+}
+
+function drop(evt) {
+	evt.stopPropagation();
+	evt.preventDefault();
+	var ishtml = false;
+	var files = evt.dataTransfer.files;
+	var count = files.length;
+	if ($(".active").find("a").text() == "HTML") {
+		ishtml = true;
+	}
+	// Only call the handler if 1 or more files was dropped.
+	if (count > 0)
+		handleFiles(files, ishtml);
+}
+
+function handleFiles(files, ishtml) {
+	var file = files[0];
+	document.getElementById("drop").innerHTML = "Processing " + file.name;
+	var reader = new FileReader();
+
+	// init the reader event handlers
+	reader.onload = function(evt) {
+		if (ishtml)
+			htmlcon = evt.target.result;
+		else
+			csscon = evt.target.result;
+		$("#start, #drop").hide();
+		$code.show();
+		$code.val(evt.target.result);
+	}
+	// begin the read operation
+	reader.readAsText(file);
+}
+
 
 $("li").bind("click", function() {
 	var active = $(".active");
@@ -120,13 +183,28 @@ $("li").bind("click", function() {
 		var tabtext = $(this).find("a").text();
 		if (tabtext != "Preview") {
 			iframe.hide();
-			$code.show();
 			switch(tabtext) {
 				case "HTML":
-					$code.val(htmlcon);
+
+					if (htmlcon == "") {
+						$code.hide();
+						$("#start, #drop").show();
+					} else {
+						$code.val(htmlcon);
+						$code.show()
+						$("#start, #drop").hide();
+					}
 					break;
 				case "CSS":
-					$code.val(csscon);
+
+					if (csscon == "") {
+						$code.hide();
+						$("#start, #drop").show();
+					} else {
+						$code.val(csscon);
+						$code.show();
+						$("#start, #drop").hide();
+					}
 					break;
 				default:
 					break;
@@ -304,16 +382,18 @@ $("#download, #blob").bind("click", function() {
 });
 
 function saveEdits(prev) {
-	var text = prev.find("a").text();
-	if (text == "HTML")
-		htmlcon = $code.val();
-	else if (text == "CSS")
-		csscon = $code.val();
+	if ($code.is(":visible")) {
+		var text = prev.find("a").text();
+		if (text == "HTML")
+			htmlcon = $code.val();
+		else if (text == "CSS")
+			csscon = $code.val();
+	}
 }
 
 function setCurrentLesson() {
-	$("#done2, #doneall, #finish, #donetext, #submit2").hide();
-	$("#console p, #submit").show();
+	$("#done2, #doneall, #finish, #donetext, #submit2, #code").hide();
+	$("#console p, #submit, #start, #drop").show();
 	$console.css("padding", "12px");
 	if (cur < done) {
 		htmlcon = all[cur].html;

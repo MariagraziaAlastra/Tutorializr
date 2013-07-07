@@ -41,8 +41,12 @@
 	-moz-border-radius:5px;
 	border-radius:5px;
 }
+
+#code, iframe {
+	display: none;
+}
+
 iframe {
-	display:none;
 	width:832px;
 	height:383px;
 	margin-bottom:5px;
@@ -52,6 +56,28 @@ iframe {
 	-moz-border-radius:5px;
 	border-radius:5px;
 }
+
+#start {
+	width:832px;
+	height:383px;
+	margin-bottom:10px;
+	background-color:#fff;
+	border:2px solid #F89406;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+} 
+
+#drop {
+	width: 500px;
+	height: 115px;
+	margin-top: 100px;
+	margin-left: 150px;
+	color: #B7B6B6;
+	padding: 30px 7px 0px;
+	border:4px dashed #CCCCCC;
+}
+
 .row-fluid {
 	margin-left:20px;
 	background-color:#fff;

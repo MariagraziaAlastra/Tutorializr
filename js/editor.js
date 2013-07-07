@@ -35,6 +35,8 @@ var $assigntext;
 var $donetext;
 var $doneall;
 var $drop;
+var htmldrop = false;
+var cssdrop = false;
 
 $(document).ready(function() {
 	//caching
@@ -110,9 +112,16 @@ $('#welcome').on('hidden', function() {
 
 $("#drop").bind("click", function() {
 	$("#drop, #start").hide();
-	$code.val(base);
+	if ($(".active").find("a").text() == "HTML") {
+		$code.val(base);
+		htmlcon = base;
+		htmldrop = true;
+	} else {
+		$code.val("");
+		cssdrop = true;
+	}
 	$code.show();
-	htmlcon = base;
+
 });
 
 var dropbox = document.getElementById("drop");
@@ -158,10 +167,13 @@ function handleFiles(files, ishtml) {
 
 	// init the reader event handlers
 	reader.onload = function(evt) {
-		if (ishtml)
+		if (ishtml) {
 			htmlcon = evt.target.result;
-		else
+			htmldrop = true;
+		} else {
 			csscon = evt.target.result;
+			cssdrop = true;
+		}
 		$("#start, #drop").hide();
 		$code.show();
 		$code.val(evt.target.result);
@@ -186,7 +198,7 @@ $("li").bind("click", function() {
 			switch(tabtext) {
 				case "HTML":
 
-					if (htmlcon == "") {
+					if (!htmldrop) {
 						$code.hide();
 						$("#start, #drop").show();
 					} else {
@@ -197,7 +209,7 @@ $("li").bind("click", function() {
 					break;
 				case "CSS":
 
-					if (csscon == "") {
+					if (!cssdrop) {
 						$code.hide();
 						$("#start, #drop").show();
 					} else {
@@ -255,10 +267,10 @@ $("#submit2").bind("click", function() {
 				$next.removeClass("disabled");
 			}
 			if (!all[cur]) {
-				all.push(lesson);
+				all.push(cloneLesson(lesson));
 			} else {
-				all[cur].html = htmlcon;
-				all[cur].css = csscon;
+				all[cur].html = cloneLesson(lesson).html;
+				all[cur].css = cloneLesson(lesson).css;
 			}
 			if (done == chapters) {
 				$("#finaldialog").modal("show");
@@ -281,7 +293,7 @@ $("#savelesson").bind("click", function() {
 		lesson["pre"] = pre;
 		if (done == cur && done < chapters) {
 			$lessontext.css("height", "120px");
-			if ((solution && lesson.html != null) && lesson.css != null) {
+			if ((solution && lesson.html != null) && (lesson.css != null)) {
 				$donetext.hide();
 				$doneall.show();
 				done += 1;
@@ -291,10 +303,10 @@ $("#savelesson").bind("click", function() {
 					$next.removeClass("disabled");
 				}
 				if (!all[cur]) {
-					all.push(lesson);
+					all.push(cloneLesson(lesson));
 				} else {
-					all[cur].html = htmlcon;
-					all[cur].css = csscon;
+					all[cur].text = cloneLesson(lesson).text;
+					all[cur].pre = cloneLesson(lesson).pre;
 				}
 				if (done == chapters) {
 					$("#finaldialog").modal("show");
@@ -309,9 +321,13 @@ $("#savelesson").bind("click", function() {
 		$lessontext.css("height", "165px");
 	}
 });
+
 $("#reset").bind("click", function() {
 	htmlcon = base;
 	csscon = "";
+	cssdrop = false;
+	htmldrop = false;
+
 	switch ($(".active").find("a").text()) {
 		case "HTML":
 			$code.val(base);
@@ -322,6 +338,8 @@ $("#reset").bind("click", function() {
 		default:
 			break;
 	}
+	$("#start, #drop").show();
+	$code.hide();
 });
 
 $("#next, .next").bind("click", function() {
@@ -381,30 +399,47 @@ $("#download, #blob").bind("click", function() {
 	stringifyAndDownload();
 });
 
-function saveEdits(prev) {
-	if ($code.is(":visible")) {
-		var text = prev.find("a").text();
-		if (text == "HTML")
-			htmlcon = $code.val();
-		else if (text == "CSS")
-			csscon = $code.val();
+function cloneLesson(lesson) {
+	var clone = {};
+	for (var key in lesson ) {
+		if (lesson.hasOwnProperty(key))
+			clone[key] = lesson[key];
 	}
+	return clone;
+}
+
+function saveEdits(prev) {
+	var text = prev.find("a").text();
+	if (text == "HTML" && htmldrop)
+		htmlcon = $code.val();
+	else if (text == "CSS" && cssdrop)
+		csscon = $code.val();
 }
 
 function setCurrentLesson() {
-	$("#done2, #doneall, #finish, #donetext, #submit2, #code").hide();
-	$("#console p, #submit, #start, #drop").show();
+	$("#done2, #doneall, #finish, #donetext, #submit2").hide();
+	$("#console p, #submit").show();
 	$console.css("padding", "12px");
 	if (cur < done) {
+		$("#start, #drop").hide();
+		$code.show();
 		htmlcon = all[cur].html;
+		$code.val(htmlcon);
 		csscon = all[cur].css;
 		$lessontext.val(all[cur].text);
 		$assigntext.val(all[cur].pre);
+		htmldrop = true;
+		cssdrop = true;
+
 	} else {
 		htmlcon = base;
 		csscon = "";
+		htmldrop = false;
+		cssdrop = false;
 		$lessontext.val("");
 		$assigntext.val("");
+		$("#start, #drop").show();
+		$code.hide();
 	}
 	$lessontext.css("height", "190px");
 	text = "";
@@ -414,7 +449,6 @@ function setCurrentLesson() {
 	lesson["css"] = null;
 	$(".active").removeClass("active");
 	$("ul li:first-child").addClass("active");
-	$code.val(htmlcon);
 }
 
 function updateProgressBar() {

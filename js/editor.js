@@ -150,19 +150,34 @@ function drop(evt) {
 	evt.stopPropagation();
 	evt.preventDefault();
 	var ishtml = false;
+	var ext = "CSS";
 	var files = evt.dataTransfer.files;
 	var count = files.length;
 	if ($(".active").find("a").text() == "HTML") {
 		ishtml = true;
+		ext = "HTML";
 	}
+	
+	
 	// Only call the handler if 1 or more files was dropped.
-	if (count > 0)
-		handleFiles(files, ishtml);
+	if (count > 0) {
+		if (isValidFile(files[0], ext)) {
+			handleFiles(files, ishtml);
+		} else {
+			$("#drop").text(files[0].name + " is not a valid " + ext + " file. Try again!");
+		}		
+	}
+		
+}
+
+function isValidFile(file, ext) {
+	ext = "." + ext.toLowerCase();
+	return file.name.substring((file.name.length - ext.length), (file.name.length)) == ext;
 }
 
 function handleFiles(files, ishtml) {
 	var file = files[0];
-	document.getElementById("drop").innerHTML = "Processing " + file.name;
+	$("#drop").text("Processing " + file.name);
 	var reader = new FileReader();
 
 	// init the reader event handlers
@@ -224,6 +239,7 @@ $("li").bind("click", function() {
 					break;
 			}
 		} else {
+			$("#start, #drop").hide();
 			$code.hide();
 			iframe.show();
 			body = iframe.contents().find("body");

@@ -255,7 +255,7 @@ $("#submit").bind("click", function() {
 	if (htmlcon != base || csscon != "") {
 		$("#console p, #bad").hide();
 		$("#done1").show();
-		$console.css("padding", "8px");
+		$console.css("padding", "5px");
 		$("#submit").hide();
 		$("#submit2").show();
 		if (done == cur && done < chapters) {
@@ -265,14 +265,14 @@ $("#submit").bind("click", function() {
 	} else {
 		$("#console p, #done1").hide();
 		$("#bad").show();
-		$console.css("padding", "8px");
+		$console.css("padding", "5px");
 	}
 });
 
 $("#submit2").bind("click", function() {
 	$("#console p, #done1, #finish").hide();
 	$("#done2").show();
-	$console.css("padding", "8px");
+	$console.css("padding", "5px");
 	lesson["html"] = htmlcon;
 	lesson["css"] = csscon;
 	if (done == cur && done < chapters) {
@@ -437,7 +437,7 @@ function saveEdits(prev) {
 function setCurrentLesson() {
 	$("#done2, #doneall, #finish, #donetext, #submit2").hide();
 	$("#console p, #submit").show();
-	$console.css("padding", "12px");
+	$console.css("padding", "10px");
 	if (cur < done) {
 		$("#start, #drop").hide();
 		$code.show();
@@ -473,7 +473,7 @@ function setCurrentLesson() {
 function updateProgressBar() {
 	var percent = (done * 100) / chapters;
 	$(".bar").css("width", percent + "%");
-	$(".span4 p:first-child").text(done + "/" + chapters + " Complete").css("font-weight", "bold");
+	$("#progressbar").text(done + "/" + chapters + " Complete").css("font-weight", "bold");
 }
 
 function stringifyAndDownload() {

@@ -1,71 +1,86 @@
-#terminal {
-	position:relative;
-	margin:0 10px 5px;
-	height:500px;
-	padding:5px 19px 14px;
-	background-color:#fff;
-	*padding-top:19px;
-	-webkit-border-radius:5px;
-	-moz-border-radius:5px;
-	border-radius:5px;
+
+#code, iframe, #done1, #bad, #done2, #finish, #notitle, #nonumber, #submit2, #required, #doneall, #donetext {
+	display: none;
 }
-.span4 {
-	position:relative;
-	margin-top:7px;
-	height:543px;
-	padding:9px 19px 14px;
-	background-color:#fff;
-	border:2px solid #0088CC;
-	-webkit-border-radius:5px;
-	-moz-border-radius:5px;
-	border-radius:5px;
-}
-#console {
-	margin:10px 0;
-	padding:12px;
-	width:838px;
-	background-color:#3C3B3B;
-	color:#fff;
-	text-shadow:0 -1px 0 black;
-	box-shadow:1px 2px 0 #fff;
-	color:#fff;
-	-webkit-border-radius:5px;
-	-moz-border-radius:5px;
-	border-radius:5px;
-}
-#code {
-	width:820px;
-	height:375px;
-	border:2px solid #F89406;
+#terminal, .span4, #console, #code, iframe, #start {
 	-webkit-border-radius:5px;
 	-moz-border-radius:5px;
 	border-radius:5px;
 }
 
-#code, iframe {
-	display: none;
+body, .row-fluid, #terminal, iframe, #start{
+	background-color:#fff;
+}
+
+body, html, .row-fluid, .container-fluid {
+	height: 100%;
+}
+
+#done1, #bad, #done2, #finish {
+	margin:0;
+}
+
+#choosetitle> p, #choosenumber> p, #title, #number {
+	display:inline;
+}
+
+#code, iframe, #start {
+	border:2px solid #F89406;
+}
+
+iframe, #start {
+	width:800px;
+	height:393px;	
+}
+
+#title, #number {
+	height:30px;
+}
+
+#titleset, #ok {
+	margin-right:230px;
+}
+
+#lessontext, #assigntext {
+	width:350px;
+}
+
+#terminal {
+	position:relative;
+	margin:20px 10px 5px;
+	padding:3px 35px;
+	*padding-top:19px;
+	
+}
+
+.span4 {
+	position:relative;
+	margin-top: 2px;
+	padding:0px 20px 10px;
+}
+
+#console {
+	position:relative;
+	width:787px;
+	margin:10px 0;
+	padding:9px;
+	background-color:#1B1B1B;
+	color: #fff;
+	text-shadow:0 -1px 0 black;
+}
+
+#code {
+	width:788px;
+	height:385px;
+	box-shadow:0px 0px 0px;
 }
 
 iframe {
-	width:832px;
-	height:383px;
 	margin-bottom:5px;
-	background-color:#fff;
-	border:2px solid #F89406;
-	-webkit-border-radius:5px;
-	-moz-border-radius:5px;
-	border-radius:5px;
 }
 
 #start {
-	width:832px;
-	height:383px;
 	margin-bottom:10px;
-	background-color:#fff;
-	border:2px solid #F89406;
-	-webkit-border-radius:5px;
-	-moz-border-radius:5px;
-	border-radius:5px;
 } 
 
 #drop {
@@ -78,51 +93,33 @@ iframe {
 	border:4px dashed #CCCCCC;
 }
 
-.row-fluid {
-	margin-left:20px;
-	background-color:#fff;
-}
-body {
-	background-color:#fff;
-}
-#done1, #bad, #done2, #finish {
-	display:none;
-	margin:0;
-}
 .nav-pills {
 	margin-bottom:20px;
 	font-size:16px;
 }
+
 h1 {
-	color:#3C3B3B;
-	text-shadow:1px 2px 0 #fff;
+	color:#F89406;
+	text-shadow: 1px 2px 1px #BA6F04;
 }
+
 pre {
 	border-color:#F89406;
 	background-color:#FCF1E4;
 }
-#choosetitle> p, #choosenumber> p {
-	display:inline;
-}
-#title, #number {
-	display:inline;
-	height:30px;
-}
-#titleset, #ok {
-	margin-right:230px;
-}
-#download{
+
+#download {
 	margin-right:190px;
 }
-#notitle, #nonumber, #submit2, #required, #doneall, #donetext {
-	display:none;
-}
-#lessontext, #assigntext {
-	width:350px;
-}
+
 #lessontext {
 	height:190px;
 }
+
 #required {
 	color:red;
+}
+
+.container-fluid {
+	float:left;
 }

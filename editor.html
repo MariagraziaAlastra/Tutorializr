@@ -12,12 +12,12 @@
 		<link rel="shortcut icon" href="img/favicon.ico" />
 	</head>
 	<body>
-		<h1 class="text-center">Title</h1>
 		<div class="container-fluid">
 			<div class="row-fluid">
 				<div class="span4">
 					<!--Sidebar content-->
-					<p class="text-center">
+					<h1 class="text-center">Title</h1>
+					<p class="text-center" id="progressbar">
 						<strong>0% Complete</strong>
 					</p>
 
@@ -45,18 +45,14 @@
 					<div id="doneall" class="alert alert-success">
 						<strong>Well done! Now you can move on <a href="#" class="next">to the next lesson!</a></strong>
 					</div>
-					<p>
+					<p class="text-center">
 						<strong>Insert the text for this lesson below:</strong>
 					</p>
 					<textarea id="lessontext"></textarea>
-					<p>
+					<p class="text-center">
 						<strong>Insert instructions about the assignment below:</strong>
 					</p>
-					<textarea id="assigntext"></textarea>																				
-					
-
-
-
+					<textarea id="assigntext"></textarea>																																								
 
 					<div class="pagination pagination-centered">
 						<button id="savelesson" class="btn btn-primary">
@@ -80,8 +76,10 @@
 					</ul>
 					<textarea id="code"></textarea>
 					<div id="start">
-						<div id="drop" class="text-center lead">Drag your HTML file from desktop and drop it here, or click
-							inside this box to write code from scratch!</div>
+						<div id="drop" class="text-center lead">
+							Drag your HTML file from desktop and drop it here, or click
+							inside this box to write code from scratch!
+						</div>
 					</div>
 					<iframe></iframe>
 					<div>
@@ -96,9 +94,9 @@
 						</button>
 
 					</div>
-					<div id="console" class="span12">
+					<div id="console">
 						<p>
-							Insert the solution of this lesson, first, and then save.
+							First, insert the solution of the exercise, and then save.
 							You can preview the result by switching to the "Preview" tab!
 						</p>
 						<div id="done1" class="alert alert-success">
@@ -115,8 +113,12 @@
 						</div>
 					</div>
 				</div>
+				<p class="text-right" style="margin-right:10px;">
+					<small>Created by Maria Grazia Alastra &middot; <a href="https://github.com/MariagraziaAlastra/Tutorializr">GitHub</a>&middot; 2013</small>
+				</p>
 			</div>
 		</div>
+
 		<!------------------------- Welcome Dialog --------------------------->
 
 		<div id="welcome" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -165,7 +167,7 @@
 					The source code of your tutorial is ready to be downloaded!
 				</p>
 				<p class="lead">
-					To test it, include the files in your website and access the page <strong>template.html</strong>. 
+					To test it, include the files in your website and access the page <strong>template.html</strong>.
 				</p>
 				<p class="lead">
 					Thank you for choosing Tutorializr!
@@ -215,6 +217,7 @@
 					</button>
 				</div>
 			</div>
+
 		</div>
 		<script src="js/jszip.js"></script>
 		<script src="js/jszip-deflate.js"></script>

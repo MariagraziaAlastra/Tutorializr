@@ -14,6 +14,7 @@ var assignment = "";
 var all = new Array();
 var lesson = new Object();
 var tutorial = new Object();
+var lastwritten = new Object();
 var body;
 var head;
 var templatehtml = "";
@@ -53,6 +54,8 @@ $(document).ready(function() {
 	$donetext = $("#donetext");
 	$doneall = $("#doneall");
 	$drop = $("#drop");
+
+	lastwritten["cur"] = cur;
 
 	$("#welcome").modal("show");
 
@@ -307,6 +310,8 @@ $("#submit2").bind("click", function() {
 $("#savelesson").bind("click", function() {
 	text = $lessontext.val();
 	pre = $assigntext.val();
+	lastwritten["lesson"] = text;
+	lastwritten["assignment"] = pre;
 	if (text != "" && pre != "") {
 		$("#required").hide();
 		$lessontext.css("height", "190px");
@@ -435,16 +440,20 @@ function cloneLesson(lesson) {
 
 function saveEdits(prev) {
 	var text = prev.find("a").text();
-	if (text == "HTML" && htmldrop)
+	if (text == "HTML" && htmldrop) {
 		htmlcon = $code.val();
-	else if (text == "CSS" && cssdrop)
+		lastwritten["html"] = htmlcon;
+	} else if (text == "CSS" && cssdrop) {
 		csscon = $code.val();
+		lastwritten["css"] = csscon;
+	}
 }
 
 function setCurrentLesson() {
-	$("#done2, #doneall, #finish, #donetext, #submit2, #alltutorialdone, #alltutorialdone2").hide();
+	$("#done2, #doneall, #finish, #donetext, #submit2, #alltutorialdone, #alltutorialdone2, #required").hide();
 	$("#console p, #submit").show();
 	$console.css("padding", "10px");
+	//alert(cur + " " + done + " " + lastwritten["cur"]);
 	if (cur < done) {
 		$("#start, #drop").hide();
 		$code.show();
@@ -455,8 +464,47 @@ function setCurrentLesson() {
 		$assigntext.val(all[cur].pre);
 		htmldrop = true;
 		cssdrop = true;
+	} else if ((cur == done && done != 0) && (cur == lastwritten["cur"])) {
+		alert(lastwritten["cur"]);
+		if (lastwritten["html"] != null) {
+			$("#start, #drop").hide();
+			$code.show();
+			htmldrop = true;
+			htmlcon = lastwritten["html"];
+			$code.val(htmlcon);
+		} else {
+			$("#start, #drop").show();
+			$code.hide();
+			$drop.text("Drag your HTML file from desktop and drop it here, or click inside this box to write code from scratch!");
+			htmldrop = false;
+			htmlcon = base;
+		}
 
+		if (lastwritten["css"] != null) {
+			cssdrop = true;
+			csscon = lastwritten["css"];
+		} else {
+			cssdrop = false;
+			csscon = "";
+		}
+
+		if (lastwritten["lesson"] != null) {
+			$lessontext.val(lastwritten["lesson"]);
+		} else {
+			$lessontext.val("");
+		}
+
+		if (lastwritten["assignment"] != null) {
+			$assigntext.val(lastwritten["assignment"]);
+		} else {
+			$assigntext.val("");
+		}
 	} else {
+		lastwritten["html"] = null;
+		lastwritten["css"] = null;
+		lastwritten["lesson"] = null;
+		lastwritten["assignment"] = null;
+		lastwritten["cur"] = cur;
 		htmlcon = base;
 		csscon = "";
 		htmldrop = false;

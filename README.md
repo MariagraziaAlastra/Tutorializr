@@ -11,7 +11,6 @@ TODO list (reminder for myself) :
 * Implement code highlighter;
 * Integrate some WYSIWYG editor (or just some basic functionalities) 
 in the textareas dedicated to the lesson explanation;
-* Save changes to the code when going back to previous lessons;
 * Add social buttons;
 * Create more templates;
 * Add more content to the home page.

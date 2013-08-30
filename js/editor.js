@@ -192,7 +192,7 @@ function handleFiles(files, ishtml) {
 		$("#start, #drop").hide();
 		$code.show();
 		$code.val(evt.target.result);
-	}
+	};
 	// begin the read operation
 	reader.readAsText(file);
 }
@@ -219,7 +219,7 @@ $("li").bind("click", function() {
 						$drop.text("Drag your HTML file from desktop and drop it here, or click inside this box to write code from scratch!");
 					} else {
 						$code.val(htmlcon);
-						$code.show()
+						$code.show();
 						$("#start, #drop").hide();
 					}
 					break;

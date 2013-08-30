@@ -363,7 +363,7 @@ $("#reset").bind("click", function() {
 $("#next, .next").bind("click", function() {
 	if (!$next.hasClass("disabled")) {
 		cur += 1;
-		if (cur == done) {
+		if (cur == done || cur == chapters - 1) {
 			$next.addClass("disabled");
 		}
 		$prev.removeClass("disabled");

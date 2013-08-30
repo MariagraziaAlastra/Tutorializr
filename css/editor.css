@@ -1,5 +1,6 @@
 
-#code, iframe, #done1, #bad, #done2, #finish, #notitle, #nonumber, #submit2, #required, #doneall, #donetext {
+#code, iframe, #done1, #bad, #done2, #finish, #notitle, #nonumber, 
+#submit2, #required, #doneall, #donetext, #alltutorialdone, #alltutorialdone2 {
 	display: none;
 }
 #terminal, .span4, #console, #code, iframe, #start {

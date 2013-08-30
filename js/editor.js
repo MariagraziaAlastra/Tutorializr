@@ -157,17 +157,16 @@ function drop(evt) {
 		ishtml = true;
 		ext = "HTML";
 	}
-	
-	
+
 	// Only call the handler if 1 or more files was dropped.
 	if (count > 0) {
 		if (isValidFile(files[0], ext)) {
 			handleFiles(files, ishtml);
 		} else {
 			$("#drop").text(files[0].name + " is not a valid " + ext + " file. Try again!");
-		}		
+		}
 	}
-		
+
 }
 
 function isValidFile(file, ext) {
@@ -278,7 +277,11 @@ $("#submit2").bind("click", function() {
 	if (done == cur && done < chapters) {
 		if ((solution && pre != "") && text != "") {
 			$("#done2").hide();
-			$("#finish").show();
+			if (done < chapters - 1) {
+				$("#finish").show();
+			} else {
+				$("#alltutorialdone").show();
+			}
 			done += 1;
 			updateProgressBar();
 			if (cur < (chapters - 1)) {
@@ -313,7 +316,11 @@ $("#savelesson").bind("click", function() {
 			$lessontext.css("height", "120px");
 			if ((solution && lesson.html != null) && (lesson.css != null)) {
 				$donetext.hide();
-				$doneall.show();
+				if (done < chapters - 1) {
+					$doneall.show();
+				} else {
+					$("#alltutorialdone2").show();
+				}
 				done += 1;
 				updateProgressBar();
 
@@ -435,7 +442,7 @@ function saveEdits(prev) {
 }
 
 function setCurrentLesson() {
-	$("#done2, #doneall, #finish, #donetext, #submit2").hide();
+	$("#done2, #doneall, #finish, #donetext, #submit2, #alltutorialdone, #alltutorialdone2").hide();
 	$("#console p, #submit").show();
 	$console.css("padding", "10px");
 	if (cur < done) {

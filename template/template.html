@@ -11,91 +11,85 @@
 		<link rel="shortcut icon" href="img/favicon.ico" />
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<style>
-			#terminal {
-				position:relative;
-				margin:0 10px 5px;
-				height:500px;
-				padding:5px 19px 14px;
+			#terminal, .span4, #console, textarea, iframe {
+				-webkit-border-radius: 5px;
+				-moz-border-radius: 5px;
+				border-radius: 5px;
+			}
+			body, .row-fluid, #terminal, iframe, .span4 {
 				background-color: #fff;
-				*padding-top:19px;
-				-webkit-border-radius:5px;
-				-moz-border-radius:5px;
-				border-radius:5px;
+			}
+			body, html, .row-fluid, .container-fluid {
+				height: 100%;
+			}
+			textarea, iframe {
+				border: 2px solid #F89406;
+			}
+			#terminal {
+				position: relative;
+				margin-top: 2px;
+				padding: 0px 20px 10px;
 			}
 			.span4 {
-				position:relative;
-				margin-top:7px;
-				height:543px;
-				padding:9px 19px 14px;
-				background-color:#fff;
-				border:2px solid #0088CC;
-				-webkit-border-radius:5px;
-				-moz-border-radius:5px;
-				border-radius:5px;
+				position: relative;
+				margin-top: 7px;
+				height: 543px;
+				padding: 9px 19px 14px;
 			}
 			#console {
-				margin:10px 0;
-				padding:12px;
-				width:838px;
-				background-color:#3C3B3B;
-				color:#fff;
-				text-shadow:0 -1px 0 black;
-				box-shadow:1px 2px 0 #fff;
-				color:#fff;
-				-webkit-border-radius:5px;
-				-moz-border-radius:5px;
-				border-radius:5px;
+				position: relative;
+				width: 787px;
+				margin: 10px 0;
+				padding: 9px;
+				background-color: #1B1B1B;
+				color: #fff;
+				text-shadow: 0 -1px 0 black;
 			}
 			textarea {
-				width:820px;
-				height:375px;
-				border:2px solid #F89406;
-				-webkit-border-radius:5px;
-				-moz-border-radius:5px;
-				border-radius:5px;
+				width: 788px;
+				height: 385px;
+				box-shadow: 0px 0px 0px;
 			}
 			iframe {
-				display:none;
-				width:832px;
-				height:383px;
-				margin-bottom:5px;
-				background-color:#fff;
-				border:2px solid #F89406;
-				-webkit-border-radius:5px;
-				-moz-border-radius:5px;
-				border-radius:5px;
+				display: none;
+				width: 800px;
+				height: 393px;
+				margin-bottom: 5px;
 			}
 			.row-fluid {
-				margin-left:20px;
+				margin-left: 20px;
 				background-color: #fff;
 			}
 			body {
 				background-color: #fff;
 			}
 			#good, #bad, #goodlast {
-				display:none;
-				margin:0;
+				display: none;
+				margin: 0;
 			}
 			.nav-pills {
-				margin-bottom:20px;
-				font-size:16px;
+				margin-bottom: 20px;
+				font-size: 16px;
 			}
 			h1 {
-				color:#3C3B3B;
-				text-shadow:1px 2px 0 #fff;
+				color: #F89406;
+				text-shadow: 1px 2px 1px #BA6F04;
 			}
 			pre {
-				border-color:#F89406;
-				background-color:#FCF1E4;
+				border-color: #F89406;
+				background-color: #FCF1E4;
+			}
+			.container-fluid {
+				float: left;
 			}
 		</style>
 	</head>
 	<body>
-		<h1 class="text-center"></h1>
 		<div class="container-fluid">
 			<div class="row-fluid">
 				<div class="span4">
 					<!--Sidebar content-->
+					<h1 class="text-center"></h1>
 					<p class="text-center">
 						<strong>35% Completed</strong>
 					</p>
@@ -140,7 +134,7 @@
 						</button>
 
 					</div>
-					<div id="console" class="span12">
+					<div id="console">
 						<!--Body content-->
 						<p>
 							Press "Submit" when you're ready.
@@ -155,6 +149,9 @@
 							<strong>Uhm, there is something wrong here... Try again!</strong>
 						</div>
 					</div>
+					<p class="text-right" style="margin-right:10px;">
+						<small>Tutorial created using <a href="http://mariagraziaalastra.github.io/Tutorializr/">Tutorializr</a>&middot; <a href="https://github.com/MariagraziaAlastra/Tutorializr">GitHub</a>&middot; 2013</small>
+					</p>
 				</div>
 
 			</div>

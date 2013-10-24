@@ -48,3 +48,8 @@ Contribute
 You can help by testing! If you find bugs or have any feature requests, please [file a bug here](https://github.com/MariagraziaAlastra/Tutorializr/issues).
 
 Thank you!
+
+Additional notes
+----------------
+
+Tutorializr won the second place at the July Dev Derby organized by Mozilla! [Link to the blog post on Mozilla Hacks](https://hacks.mozilla.org/2013/10/announcing-the-winners-of-the-july-2013-dev-derby/)

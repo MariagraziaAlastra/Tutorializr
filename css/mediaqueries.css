@@ -1,0 +1,11 @@
+/* Styles for 1024x768 resolution (most used #2)*/
+@media all and (max-width: 1169px) {
+	#terminal {width: 65%;}
+	iframe, #start {width: 100%;}
+	#console {width: 98%;}
+	#code {width: 98.1%;}
+	#drop {width: 70%; padding: 7px; margin-left: 14%; height: 22.5%; margin-top: 20%;}
+	#lessontext, #assigntext {width: 97%;}
+	small {margin-right: 4%;}
+	.container-fluid {padding-top: 2.5%;}
+}

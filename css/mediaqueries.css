@@ -9,3 +9,9 @@
 	small {margin-right: 4%;}
 	.container-fluid {padding-top: 2.5%;}
 }
+
+@media all and (min-width: 1700px) {
+	#drop {margin-top: 11%;}
+	#console {width: 98.7%;}
+	small {margin-right: 2.3%;}
+}

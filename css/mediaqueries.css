@@ -1,4 +1,4 @@
-/* Styles for 1024x768 resolution (most used #2)*/
+/* Styles for 1024x768 resolution (most used #2) */
 @media all and (max-width: 1169px) {
 	#terminal {width: 65%;}
 	iframe, #start {width: 100%;}
@@ -10,8 +10,43 @@
 	.container-fluid {padding-top: 2.5%;}
 }
 
+/* Styles for 1920x1080 resolution (most used #4) */
 @media all and (min-width: 1700px) {
-	#drop {margin-top: 11%;}
+	#drop {margin-top: 20%; padding-top: 3.5%;}
 	#console {width: 98.7%;}
 	small {margin-right: 2.3%;}
 }
+
+/* Styles for 1280x800 (most used #3) and  1280x1024 (most used #5) */
+@media all and (max-width: 1300px) {
+	#drop {height: auto;}
+}
+
+/* Adjust height for 1280x800 resolution (most used #3) */
+@media all and (min-height: 800px) and (max-height: 880px){
+	.container-fluid {margin-top: 2%;}
+	iframe, #start {height: 480px;}
+	#code {height: 471.4px;}
+	#lessontext {height: 270px;}
+	#assigntext {height: 60px;}
+}
+
+/* Adjust height for 1440x900 resolution (most used #6) */
+@media all and (min-height: 881px) and (max-height: 990px){
+	.container-fluid {margin-top: 2%;}
+	iframe, #start {height: 560px;}
+	#code {height: 552px;}
+	#lessontext {height: 310px;}
+	#assigntext {height: 96.5px;}
+}
+
+/* Adjust height for 1280x1024 (most used #5) and 1920x1080 resolution (most used #4) */
+@media all and (min-height: 991px) and (max-height: 1100px){
+	.container-fluid {margin-top: 2%;}
+	iframe, #start {height: 670px;}
+	#code {height: 662px;}
+	#lessontext {height: 410px;}
+	#assigntext {height: 106.4px;}
+	#drop {margin-top: 20%;}
+}
+

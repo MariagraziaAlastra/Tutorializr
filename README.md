@@ -6,7 +6,6 @@ Tutorializr is a tutorial maker (only HTML + CSS tutorials can be created, right
 TODO list (reminder for myself) :
 ----------------------------------
 
-* Add Media Queries;
 * Create a better favicon;
 * Implement code highlighter;
 * Integrate some WYSIWYG editor (or just some basic functionalities) 

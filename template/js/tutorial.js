@@ -167,6 +167,7 @@ function setCurrentLesson() {
 
 function updateProgressBar() {
 	var percent = (done * 100) / parsed.tutorial.chapters;
+	$("#progressNr").html( Math.round(percent) + "% Complete");
 	$(".bar").css("width", percent + "%");
 	$(".span4 p:first-child").text(done + "/" + parsed.tutorial.chapters + "Complete").css("font-weight", "bold");
 }

@@ -116,11 +116,11 @@ $('#welcome').on('hidden', function() {
 $("#drop").bind("click", function() {
 	$("#drop, #start").hide();
 	if ($(".active").find("a").text() == "HTML") {
-		$code.val(base);
+		$code.text(base);
 		htmlcon = base;
 		htmldrop = true;
 	} else {
-		$code.val("");
+		$code.text("");
 		cssdrop = true;
 	}
 	$code.show();
@@ -193,7 +193,7 @@ function handleFiles(files, ishtml) {
 		}
 		$("#start, #drop").hide();
 		$code.show();
-		$code.val(evt.target.result);
+		$code.text(evt.target.result);
 	};
 	// begin the read operation
 	reader.readAsText(file);
@@ -220,7 +220,7 @@ $("li").bind("click", function() {
 						$("#start, #drop").show();
 						$drop.text("Drag your HTML file from desktop and drop it here, or click inside this box to write code from scratch!");
 					} else {
-						$code.val(htmlcon);
+						$code.text(htmlcon);
 						$code.show();
 						$("#start, #drop").hide();
 					}
@@ -232,7 +232,7 @@ $("li").bind("click", function() {
 						$("#start, #drop").show();
 						$drop.text("Drag your CSS file from desktop and drop it here, or click inside this box to write code from scratch!");
 					} else {
-						$code.val(csscon);
+						$code.text(csscon);
 						$code.show();
 						$("#start, #drop").hide();
 					}
@@ -360,10 +360,10 @@ $("#reset").bind("click", function() {
 	$drop.text("Drag your HTML file from desktop and drop it here, or click inside this box to write code from scratch!");
 	switch ($(".active").find("a").text()) {
 		case "HTML":
-			$code.val(base);
+			$code.text(base);
 			break;
 		case "CSS":
-			$code.val("");
+			$code.text("");
 			break;
 		default:
 			break;
@@ -441,10 +441,10 @@ function cloneLesson(lesson) {
 function saveEdits(prev) {
 	var text = prev.find("a").text();
 	if (text == "HTML" && htmldrop) {
-		htmlcon = $code.val();
+		htmlcon = $code.text();
 		lastwritten["html"] = htmlcon;
 	} else if (text == "CSS" && cssdrop) {
-		csscon = $code.val();
+		csscon = $code.text();
 		lastwritten["css"] = csscon;
 	}
 }
@@ -458,7 +458,7 @@ function setCurrentLesson() {
 		$("#start, #drop").hide();
 		$code.show();
 		htmlcon = all[cur].html;
-		$code.val(htmlcon);
+		$code.text(htmlcon);
 		csscon = all[cur].css;
 		$lessontext.val(all[cur].text);
 		$assigntext.val(all[cur].pre);
@@ -471,7 +471,7 @@ function setCurrentLesson() {
 			$code.show();
 			htmldrop = true;
 			htmlcon = lastwritten["html"];
-			$code.val(htmlcon);
+			$code.text(htmlcon);
 		} else {
 			$("#start, #drop").show();
 			$code.hide();

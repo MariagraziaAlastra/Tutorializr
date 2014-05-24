@@ -1,16 +1,14 @@
-
-#code, iframe, #done1, #bad, #done2, #finish, #notitle, #nonumber, 
-#submit2, #required, #doneall, #donetext, #alltutorialdone, #alltutorialdone2 {
+#code, iframe, #done1, #bad, #done2, #finish, #notitle, #nonumber, #submit2, #required, #doneall, #donetext, #alltutorialdone, #alltutorialdone2 {
 	display: none;
 }
 #terminal, .span4, #console, #code, iframe, #start {
-	-webkit-border-radius:5px;
-	-moz-border-radius:5px;
-	border-radius:5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
 }
 
-body, .row-fluid, #terminal, iframe, #start{
-	background-color:#fff;
+body, .row-fluid, #terminal, iframe, #start {
+	background-color: #fff;
 }
 
 body, html, .row-fluid, .container-fluid {
@@ -18,32 +16,32 @@ body, html, .row-fluid, .container-fluid {
 }
 
 #done1, #bad, #done2, #finish {
-	margin:0;
+	margin: 0;
 }
 
-#choosetitle> p, #choosenumber> p, #title, #number {
-	display:inline;
+#choosetitle > p, #choosenumber > p, #title, #number {
+	display: inline;
 }
 
 #code, iframe, #start {
-	border:2px solid #F89406;
+	border: 2px solid #F89406;
 }
 
 iframe, #start, #code {
-	width:100%;
-	height:393px;	
+	width: 100%;
+	height: 393px;
 }
 
 #start, #code {
-	margin-bottom:10px;
-} 
+	margin-bottom: 10px;
+}
 
 #title, #number {
-	height:30px;
+	height: 30px;
 }
 
 #titleset, #ok {
-	margin-right:230px;
+	margin-right: 230px;
 }
 
 #lessontext, #assigntext {
@@ -51,39 +49,38 @@ iframe, #start, #code {
 }
 
 #terminal {
-	position:relative;
-	margin:20px 10px 5px;
-	padding:3px 35px;
-	*padding-top:19px;
+	position: relative;
+	margin: 20px 10px 5px;
+	padding: 3px 35px;
+	*padding-top: 19px;
 	width: 66.75%;
-	
 }
 
 .span4 {
-	position:relative;
+	position: relative;
 	margin-top: 2px;
-	padding:0px 20px 10px;
+	padding: 0px 20px 10px;
 }
 
 #console {
-	position:relative;
+	position: relative;
 	width: 98%;
-	margin:10px 0;
-	padding:9px;
-	background-color:#1B1B1B;
+	margin: 10px 0;
+	padding: 9px;
+	background-color: #1B1B1B;
 	color: #fff;
-	text-shadow:0 -1px 0 black;
+	text-shadow: 0 -1px 0 black;
 }
 
 #code {
-	box-shadow:0px 0px 0px;
+	box-shadow: 0px 0px 0px;
 	white-space: pre;
+	color: black;
 }
 
 iframe {
-	margin-bottom:5px;
+	margin-bottom: 5px;
 }
-
 
 #drop {
 	width: 60%;;
@@ -92,36 +89,40 @@ iframe {
 	margin-left: 20%;
 	color: #B7B6B6;
 	padding: 7px;
-	border:4px dashed #CCCCCC;
+	border: 4px dashed #CCCCCC;
 }
 
 .nav-pills {
-	margin-bottom:20px;
-	font-size:16px;
+	margin-bottom: 20px;
+	font-size: 16px;
 }
 
 h1 {
-	color:#F89406;
+	color: #F89406;
 	text-shadow: 1px 2px 1px #BA6F04;
 }
 
 pre {
-	border-color:#F89406;
-	background-color:#FCF1E4;
+	border-color: #F89406;
+	background-color: #FCF1E4;
 }
 
 #download {
-	margin-right:190px;
+	margin-right: 190px;
 }
 
 #lessontext {
-	height:190px;
+	height: 190px;
 }
 
 #required {
-	color:red;
+	color: red;
 }
 
 small {
 	margin-right: 2.5%;
+}
+
+span.htmltag {
+	color: #F89406;
 }

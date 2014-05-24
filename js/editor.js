@@ -116,7 +116,7 @@ $('#welcome').on('hidden', function() {
 $("#drop").bind("click", function() {
 	$("#drop, #start").hide();
 	if ($(".active").find("a").text() == "HTML") {
-		$code.text(base);
+		$code.html(highlightTags(base));
 		htmlcon = base;
 		htmldrop = true;
 	} else {
@@ -193,12 +193,15 @@ function handleFiles(files, ishtml) {
 		}
 		$("#start, #drop").hide();
 		$code.show();
-		$code.text(evt.target.result);
+		$code.html(highlightTags(evt.target.result));
 	};
 	// begin the read operation
 	reader.readAsText(file);
 }
 
+$("#code").bind("blur", function() {
+	$(this).html(highlightTags($(this).text()));
+});
 
 $("li").bind("click", function() {
 	var active = $(".active");
@@ -220,7 +223,7 @@ $("li").bind("click", function() {
 						$("#start, #drop").show();
 						$drop.text("Drag your HTML file from desktop and drop it here, or click inside this box to write code from scratch!");
 					} else {
-						$code.text(htmlcon);
+						$code.html(highlightTags(htmlcon));
 						$code.show();
 						$("#start, #drop").hide();
 					}
@@ -360,7 +363,7 @@ $("#reset").bind("click", function() {
 	$drop.text("Drag your HTML file from desktop and drop it here, or click inside this box to write code from scratch!");
 	switch ($(".active").find("a").text()) {
 		case "HTML":
-			$code.text(base);
+			$code.html(highlightTags(base));
 			break;
 		case "CSS":
 			$code.text("");
@@ -458,7 +461,7 @@ function setCurrentLesson() {
 		$("#start, #drop").hide();
 		$code.show();
 		htmlcon = all[cur].html;
-		$code.text(htmlcon);
+		$code.html(highlightTags(htmlcon));
 		csscon = all[cur].css;
 		$lessontext.val(all[cur].text);
 		$assigntext.val(all[cur].pre);
@@ -471,7 +474,7 @@ function setCurrentLesson() {
 			$code.show();
 			htmldrop = true;
 			htmlcon = lastwritten["html"];
-			$code.text(htmlcon);
+			$code.html(highlightTags(htmlcon));
 		} else {
 			$("#start, #drop").show();
 			$code.hide();

@@ -3,16 +3,22 @@ Tutorializr
 
 Tutorializr is a tutorial maker (only HTML + CSS tutorials can be created, right now). It's still in alpha, many more features to come!
 
+**[Try the latest version here!](http://mariagraziaalastra.github.io/Tutorializr/editor.html)**
+
+Just follow the instructions, upload or write the code for your lessons, add some explanations and when you're finished you will get the complete code in a ready-to-upload folder for your website!
+
+(**NB:** it won't work in locale; if you want to try the tutorial on your machine before uploading it to your website you must have a server installed on it, and of course you must put the downloaded tutorial in the appropriate folder, first.)
+
 TODO list (reminder for myself) :
 ----------------------------------
 
-* Implement code highlighter; --> work in progress
-* Create a better favicon;
+* Implement code highlighter --> work in progress
+* Create a better favicon
 * Integrate some WYSIWYG editor (or just some basic functionalities) 
-in the textareas dedicated to the lesson explanation;
-* Add social buttons;
-* Create more templates;
-* Add more content to the home page.
+in the textareas dedicated to the lesson explanation
+* Add social buttons
+* Create more templates
+* Add more content to the home page
 
 License - GNU GPLv3
 -------------------

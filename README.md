@@ -57,4 +57,4 @@ Thank you!
 Additional notes
 ----------------
 
-Tutorializr won the second place at the July Dev Derby organized by Mozilla! [Link to the blog post on Mozilla Hacks](https://hacks.mozilla.org/2013/10/announcing-the-winners-of-the-july-2013-dev-derby/)
+Tutorializr won the second place at the July Dev Derby (2013) organized by Mozilla! [Link to the blog post on Mozilla Hacks](https://hacks.mozilla.org/2013/10/announcing-the-winners-of-the-july-2013-dev-derby/)
